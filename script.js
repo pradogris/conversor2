@@ -8,18 +8,18 @@ const questions = [
   { question: "Enter intuition value:", type: "number", id: "intuition" },
   { question: "Enter psyche value:", type: "number", id: "psyche" },
   { question: "Enter HP value:", type: "number", id: "hp" },
-  { question: "Have mental, magic, energy, matter powers? (yes/no)", type: "text", id: "powers" },
+  { question: "Has mental, magic, energy or matter powers? (yes/no)", type: "text", id: "powers" },
   { question: "Enter highest power rank value:", type: "number", id: "valorpw", conditional: "powers" },
-  { question: "Have natural resistances? (yes/no)", type: "text", id: "resistances" },
-  { question: "Have regeneration? (yes/no)", type: "text", id: "regeneration" },
+  { question: "Has natural resistances? (yes/no)", type: "text", id: "resistances" },
+  { question: "Has regeneration? (yes/no)", type: "text", id: "regeneration" },
   { question: "Enter regeneration value:", type: "number", id: "valoreg", conditional: "regeneration" },
-  { question: "Have superspeed? (yes/no)", type: "text", id: "superspeed" },
+  { question: "Has superspeed? (yes/no)", type: "text", id: "superspeed" },
   { question: "Enter superspeed value:", type: "number", id: "valorsv", conditional: "superspeed" },
   { question: "Can fly? (yes/no)", type: "text", id: "flight" },
   { question: "Enter flight value:", type: "number", id: "valorvl", conditional: "flight" },
-  { question: "Have acrobat talent? (yes/no)", type: "text", id: "acrobat" },
-  { question: "Have martial arts talent? (yes/no)", type: "text", id: "artmar" },
-  { question: "Have weapon talent? (yes/no)", type: "text", id: "arma" }
+  { question: "Has acrobatic talent? (yes/no)", type: "text", id: "acrobat" },
+  { question: "Has martial arts talent? (yes/no)", type: "text", id: "artmar" },
+  { question: "Has weapon talent? (yes/no)", type: "text", id: "arma" }
 ];
 
 let currentQuestionIndex = 0;
@@ -340,29 +340,29 @@ function showResults() {
   } else if (fighting == 20) {
     resultadop = "Melee Powers: 2, Swiftness: Slow";
   } else if (fighting == 30) {
-    resultadop = "Melee Powers: 2, Swiftness: Normal, Contacts: 2, Cost: +1 Energy Cost";
+    resultadop = "Melee Powers: 2, Swiftness: Normal, Contacts: 2 (Low Energy Cost)";
   } else if (fighting == 40) {
-    resultadop = "Melee Powers: 3, Swiftness: Normal, Contacts: 2-3, Cost: None - Normal Cost";
+    resultadop = "Melee Powers: 3, Swiftness: Normal, Contacts: 2 (zero energy cost), 3 (medium energy cost)";
   } else if (fighting == 50) {
-    resultadop = "Melee Powers: 3, Swiftness: Fast, Contacts: 2-3-4+, Cost: None - +1 Cost - Normal Cost";
+    resultadop = "Melee Powers: 3, Swiftness: Fast, Contacts: 2 (zero energy cost), 3 (low energy cost), 4+(medium energy cost)";
   } else if (fighting == 75) {
-    resultadop = "Melee Powers: 3, Swiftness: Fast, Contacts: 2-3-4+, Cost: None - None - +1 Cost";
+    resultadop = "Melee Powers: 3, Swiftness: Fast, Contacts: 2-3(zero energy cost), 4+(low energy cost)";
   } else if (fighting == 100) {
-    resultadop = "Melee Powers: 3, Swiftness: Very Fast, Contacts: 2-3-4+, Cost: None - None - +1 Cost";
+    resultadop = "Melee Powers: 3, Swiftness: Very Fast, Contacts: 2-3(zero energy cost), 4+(low energy cost)";
   } else if (fighting >= 150) {
-    resultadop = "Melee Powers: 4, Swiftness: Very Fast, Contacts: 2-3-4+, Cost: None - None - +1 Cost";
+    resultadop = "Melee Powers: 4, Swiftness: Very Fast, Contacts: 2-3(zero energy cost), 4+(low energy cost)";
   }
 
   // Martial Arts Bonus
   if (artmar == "yes") {
-    valorartm = "A: Stun/KB, B: Swiftness/Stun/KB/Magnitude, C:Grapple Swap & Wrestler Att, D:Stun/KB/Magnitude, E:Swiftness";
+    valorartm = "A: +1 Stun/KB, B: +1 Swiftness/Stun/KB/Magnitude, C:Grapple Swap & Wrestler, D:+1 Stun/KB/Magnitude, E:+1 Swiftness";
   } else {
     valorartm = "None";
   }
 
   // Weapon Talent Bonus
   if (arma == "yes") {
-    valorarm = "Melee Weapons: Swiftness/Contacts/Arc/KB/Stun, Ranged Weapons: Accuracy/Stun";
+    valorarm = "Melee Weapons: +1 Swiftness/Contacts/Arc/KB/Stun, Ranged Weapons: +1 Accuracy/Stun";
   } else {
     valorarm = "None";
   }
