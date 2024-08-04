@@ -1,0 +1,13 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+#convert-form {
+  margin-bottom: 20px;
+}
+
+#results {
+  display: none;
+  margin-top: 20px;
+}
